@@ -36,15 +36,13 @@ const current = document.querySelector('#current');
 
 let slideIndex = 1;
 
-showSlides(slideIndex);
-
 if (slides.length < 10) {
     total.textContent = `0${slides.length}`;
 } else {
     total.textContent = slides.length;
 }
 
-function showSlides(n) {
+const showSlides = (n) => {
     if (n > slides.length) {
         slideIndex = 1;
     }
@@ -64,7 +62,9 @@ function showSlides(n) {
     }
 }
 
-function leafSlides(n) {
+showSlides(slideIndex);
+
+const leafSlides = (n) => {
     showSlides(slideIndex += n);
 }
 
